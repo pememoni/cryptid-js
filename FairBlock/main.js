@@ -8,7 +8,7 @@ const relayer = require("./relayer");
     const [publicParams, masterSecret, instance] = await PKG.setup();
     console.log("IBE Public Params:\n", publicParams, "\n\n")
     const [cipher, identity] = await user.sendEncrypted(instance, publicParams);
-    console.log("Encrypted =Bundle:\n", cipher, "for:\n", identity, "\n\n")
+    console.log("Encrypted Bundle:\n", cipher, "for:\n", identity, "\n\n")
     const bundleKey = await keeper.extractBundleKey(instance, masterSecret, publicParams, identity)
     console.log("Bundle Private Key:\n", bundleKey, "\n\n")
     const plaintext = await relayer.decryptBundle(instance, publicParams, cipher, bundleKey)

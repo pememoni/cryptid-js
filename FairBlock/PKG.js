@@ -3,7 +3,7 @@ const CryptID = require('@cryptid/cryptid-js');
 async function setup() {
     const instance = await CryptID.getInstance();
 ``
-    const setupResult = instance.setup(CryptID.SecurityLevel.LOWEST);
+    const setupResult = instance.setup(CryptID.SecurityLevel.LOW);
 
     if (!setupResult.success) {
         console.log('Failed to setup :(');
